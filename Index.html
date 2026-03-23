@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Cartes Streamer FF</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FF Card Generator</h1>
+            <p>Créez votre template personnalisé pour Gemini</p>
+        </header>
+
+        <main class="grid">
+            <section class="form-section">
+                <form id="cardForm">
+                    <div class="input-group">
+                        <label>Nom du Streamer</label>
+                        <input type="text" id="streamerName" placeholder="ex: UNNAME_LIVE" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Âge</label>
+                        <input type="number" id="age" placeholder="34" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Thème du Jeu</label>
+                        <select id="gameTheme">
+                            <option value="Final Fantasy VIII">Final Fantasy VIII</option>
+                            <option value="Final Fantasy VII">Final Fantasy VII</option>
+                            <option value="Final Fantasy X">Final Fantasy X</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Personnage Principal</label>
+                        <input type="text" id="character" placeholder="ex: Rinoa Heartilly" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Slogan Personnalisé</label>
+                        <input type="text" id="slogan" placeholder="Plus de Limit Breaks !">
+                    </div>
+
+                    <button type="submit" id="generateBtn">Générer la requête Gemini</button>
+                </form>
+            </section>
+
+            <section class="preview-section">
+                <div class="card-stencil" id="stencil">
+                    <div class="stencil-content">
+                        <span class="placeholder">Aperçu du Pochoir</span>
+                    </div>
+                </div>
+                <div class="prompt-output">
+                    <h3>Prompt généré :</h3>
+                    <textarea id="finalPrompt" readonly></textarea>
+                    <button class="copy-btn" onclick="copyPrompt()">Copier le prompt</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
